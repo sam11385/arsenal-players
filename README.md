@@ -1,4 +1,4 @@
-# arsenal-players
+# Arsenal FC Players
 Small app for getting a list of Arsenal FC players with over 100 appearances as of 8/15/19
 
 List source - Wikipedia:
