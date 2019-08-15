@@ -1,0 +1,14 @@
+.cards {
+    display: flex;
+    flex-flow: row wrap;
+    .card {
+        width: 20%;
+        margin: 2.5%;
+        padding: 2% 1%;
+        transition: .3s ease-in-out;
+        &:hover {
+            background: red;
+            color: #fff;
+        }
+    }
+}
