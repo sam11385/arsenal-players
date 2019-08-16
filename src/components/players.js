@@ -10,18 +10,24 @@ const Players = ({ players }) => {
   }
   
   function getMostGoals(){
-    return Math.max(null, ...getGoals());
+    return Math.max(0, ...getGoals());
   }
 
-  console.log(getMostGoals())
+  function getApps() {
+    return players.map(player => player.appstotal);
+  }
 
-  
+  function getMostApps() {
+    return Math.max(0, ...getApps())
+  }
+
 
   return (
     <div className="container-fluid">
         <h1>Player List</h1>
 
         <h2>Most Goals: {getMostGoals()}</h2>
+        <h2>Most Appearances: {getMostApps()}</h2>
         
         <div className="cards">
             {players.map((player) => 
