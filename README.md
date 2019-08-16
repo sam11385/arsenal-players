@@ -23,6 +23,8 @@ Add this to a traditional database
 
 Mount in the clouds ☁️☁️☁️
 
+Scrape wikipedia when other players get added to the list
+
 
 
 ## This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
