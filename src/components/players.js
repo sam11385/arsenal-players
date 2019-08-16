@@ -2,31 +2,26 @@ import React from 'react'
 import './Players.scss'
 
 const Players = ({ players }) => {
-  
-  // players.map((player) => {
-  //   let scot = 0;
-  //   if(player.nationality === 'Scotland') {
-  //     return console.log(player.nationality)
-  //   }
-  // })
 
   // Instead of using a loop like we used to do
   // just map what you want
-  function getYs(){
+  function getGoals(){
     return players.map(player => player.goals);
   }
   
-  function getMaxY(){
-    return console.log('MOST GOALS: ' + Math.max(...getYs()));
+  function getMostGoals(){
+    return Math.max(null, ...getGoals());
   }
 
-  console.log(getMaxY())
+  console.log(getMostGoals())
 
   
 
   return (
-    <div>
+    <div className="container-fluid">
         <h1>Player List</h1>
+
+        <h2>Most Goals: {getMostGoals()}</h2>
         
         <div className="cards">
             {players.map((player) => 
