@@ -19,12 +19,8 @@ const Players = ({ players }) => {
     return Math.max(0, ...getApps())
   }
 
-  function getNations() {
-    return players.map(player => player.nationality)
-  }
-
-  function mostNations() {
-    const allNations = getNations();
+  function getMostNations() {
+    const allNations = players.map(player => player.nationality);
     let mostFrequent = 1;
     let m = 0;
     let nation;
@@ -51,7 +47,7 @@ const Players = ({ players }) => {
 
         <h2>Most Goals: {getMostGoals()}</h2>
         <h2>Most Appearances: {getMostApps()}</h2>
-        <h2>Most represented country: {mostNations()}</h2>
+        <h2>Most represented country: {getMostNations()}</h2>
         <div className="cards">
             {players.map((player) => 
                 <div className="card">
