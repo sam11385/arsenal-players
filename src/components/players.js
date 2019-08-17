@@ -39,27 +39,66 @@ const Players = ({ players }) => {
     return `${mostFrequent} players from ${nation} have over 100 appearances!`;
   }
 
+  function sortGoals() {
+    players.map(player => player.goals);
+  }
+
+  function sortApps() {
+    players.map(player => player.appstotal);
+  }
+
+  function sortNation() {
+    players.map(player => player.nationality);
+  }
+
 
 
   return (
     <div className="container-fluid">
+      <div className="header">
         <h1>Player List</h1>
 
         <h2>Most Goals: {getMostGoals()}</h2>
         <h2>Most Appearances: {getMostApps()}</h2>
         <h2>Most represented country: {getMostNations()}</h2>
-        <div className="cards">
-            {players.map((player) => 
-                <div className="card">
-                  <div><span>Player:</span> {player.player}</div> 
-                  <div><span>Nationality:</span> {player.nationality}</div>
-                  <div><span>Position:</span> {player.pos}</div>
-                  <div><span>Goals:</span> {player.goals}</div>
-                  <div><span>Appearances:</span> {player.appstotal}</div>
-                  <div><span>Time at Club:</span> {player.club_career}</div>
-                </div>
-            )}
+
+        <div className="sort">
+          Sort by:
+          <button onClick={sortGoals}>
+            Goals
+          </button>
+          <button onClick={sortApps}>
+            Appearances
+          </button>
+          <button onClick={sortNation}>
+            Nationality
+          </button>
         </div>
+      </div>
+      <div className="cards">
+        {players.map((player) => 
+          <div className="card">
+            <div className="title">
+              <span className="bold">Player:</span> {player.player}
+            </div> 
+            <div className="title">
+              <span className="bold">Nationality:</span> {player.nationality}
+            </div>
+            <div className="title">
+              <span className="bold">Position:</span> {player.pos}
+            </div>
+            <div className="title">
+              <span className="bold">Goals:</span> {player.goals}
+            </div>
+            <div className="title">
+              <span className="bold">Appearances:</span> {player.appstotal}
+            </div>
+            <div className="title">
+              <span className="bold">Time at Club:</span> {player.club_career}
+            </div>
+          </div>
+        )}
+      </div>
         
     </div>
   )

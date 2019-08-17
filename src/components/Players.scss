@@ -1,3 +1,15 @@
+.header {
+    button {
+        margin: 0 10px;
+        transition: .3s ease-in-out;
+        cursor: pointer;
+        &:hover {
+            background: #c60000;
+            color: #fff;
+        }
+    }
+}
+
 .cards {
     display: flex;
     flex-flow: row wrap;
@@ -9,11 +21,11 @@
         padding: 1% 0 1% 1%;
         transition: .3s ease-in-out;
         &:hover {
-            background: red;
+            background: #c60000;
             color: #fff;
         }
-        div {
-            span {
+        .title {
+            .bold {
                 font-weight: bold;
             }
         }
