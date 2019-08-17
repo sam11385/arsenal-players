@@ -64,13 +64,13 @@ const Players = ({ players }) => {
 
         <div className="sort">
           Sort by:
-          <button onClick={sortGoals}>
+          <button className="btn btn-primary" onClick={sortGoals}>
             Goals
           </button>
-          <button onClick={sortApps}>
+          <button className="btn btn-primary" onClick={sortApps}>
             Appearances
           </button>
-          <button onClick={sortNation}>
+          <button className="btn btn-primary" onClick={sortNation}>
             Nationality
           </button>
         </div>
