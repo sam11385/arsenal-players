@@ -40,7 +40,9 @@ const Players = ({ players }) => {
   }
 
   function sortGoals() {
-    players.map(player => player.goals);
+
+    players.sort((a, b) => (a.player.goals > b.player.goals) ? 1 : -1)
+    console.log(players)
   }
 
   function sortApps() {
