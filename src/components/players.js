@@ -40,20 +40,16 @@ const Players = ({ players }) => {
   }
 
   function sortGoals() {
-
-    players.sort((a, b) => (a.player.goals > b.player.goals) ? 1 : -1)
-    console.log(players)
+    players.sort(function(a, b) {
+      return b.goals - a.goals;
+    })
   }
 
   function sortApps() {
-    players.map(player => player.appstotal);
+    console.log(players.sort(function(a, b) {
+      return b.appstotal - a.appstotal;
+    }))
   }
-
-  function sortNation() {
-    players.map(player => player.nationality);
-  }
-
-
 
   return (
     <div className="container-fluid">
@@ -64,18 +60,16 @@ const Players = ({ players }) => {
         <h2>Most Appearances: {getMostApps()}</h2>
         <h2>Most represented country: {getMostNations()}</h2>
 
-        <div className="sort">
-          Sort by:
-          <button className="btn btn-primary" onClick={sortGoals}>
-            Goals
-          </button>
-          <button className="btn btn-primary" onClick={sortApps}>
-            Appearances
-          </button>
-          <button className="btn btn-primary" onClick={sortNation}>
-            Nationality
-          </button>
-        </div>
+        <form>
+          <div class="form-group">
+            <label for="sel1">Sort by:</label>
+            <select class="form-control" id="sel1">
+              <option>Oldest to newest</option>
+              <option onClick={sortGoals}>Goals</option>
+              <option onClick={sortApps}>Appearances</option>
+            </select>
+          </div>
+        </form>
       </div>
       <div className="cards">
         {players.map((player) => 
