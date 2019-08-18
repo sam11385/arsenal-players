@@ -61,9 +61,9 @@ const Players = ({ players }) => {
         <h2>Most represented country: {getMostNations()}</h2>
 
         <form>
-          <div class="form-group">
-            <label for="sel1">Sort by:</label>
-            <select class="form-control" id="sel1">
+          <div className="form-group">
+            <label>Sort by:</label>
+            <select className="form-control">
               <option>Oldest to newest</option>
               <option onClick={sortGoals}>Goals</option>
               <option onClick={sortApps}>Appearances</option>
