@@ -16,10 +16,11 @@
     flex-flow: row wrap;
     justify-content: space-between;
     padding: 1%;
+    font-size: 14px;
     .card {
-        width: 15%;
-        margin: 1% .4%;
-        padding: 1% 0 1% 1%;
+        width: 12%;
+        margin: .8% .3%;
+        padding: .8% .2% .8% .8%;
         transition: .3s ease-in-out;
         &:hover {
             background: #c60000;

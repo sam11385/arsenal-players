@@ -40,7 +40,7 @@ const Players = ({ players }) => {
   }
 
   function sortGoals() {
-    players = players.sort(function(a, b) {
+    players.sort(function(a, b) {
       return b.goals - a.goals;
     })
   }
@@ -60,22 +60,21 @@ const Players = ({ players }) => {
         <h2>Most Appearances: {getMostApps()}</h2>
         <h2>Most represented country: {getMostNations()}</h2>
 
-        <form>
-          <div className="form-group">
-            <label>Sort by:</label>
-            <select className="form-control">
-              <option>Oldest to newest</option>
-              <option>Goals</option>
-              <option>Appearances</option>
-            </select>
-          </div>
-        </form>
+        <button onClick={function sortIt(){
+          players = 
+            players.sort(function(a, b) {
+              return b.goals - a.goals;
+            })
+          }
+        }>sort goals</button>
+
+        
       </div>
 
       
       <div className="cards">
         {players.map((player) => 
-          <div className="card">
+          <div key={player.player} className="card">
             <div className="title">
               <span className="bold">Player:</span> {player.player}
             </div> 
