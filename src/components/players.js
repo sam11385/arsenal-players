@@ -39,16 +39,26 @@ const Players = ({ players }) => {
     return `${mostFrequent} players from ${nation} have over 100 appearances!`;
   }
 
-  function sortGoals() {
-    players.sort(function(a, b) {
-      return b.goals - a.goals;
-    })
-  }
-
   function sortApps() {
     players.sort(function(a, b) {
       return b.appstotal - a.appstotal;
     })
+  }
+
+  function sortGoals() {
+    function handleClick(e) {
+      e.preventDefault();
+      players = players.sort(function(a, b) {
+        return b.goals - a.goals;
+      })
+      console.log(players)
+    }
+  
+    return (
+      <button onClick={handleClick}>
+        Click me
+      </button>
+    );
   }
 
   return (
@@ -60,15 +70,7 @@ const Players = ({ players }) => {
         <h2>Most Appearances: {getMostApps()}</h2>
         <h2>Most represented country: {getMostNations()}</h2>
 
-        <button onClick={function sortIt(){
-          players = 
-            players.sort(function(a, b) {
-              return b.goals - a.goals;
-            })
-          }
-        }>sort goals</button>
-
-        
+        <div>{sortGoals()}</div>
       </div>
 
       
