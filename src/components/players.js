@@ -40,15 +40,15 @@ const Players = ({ players }) => {
   }
 
   function sortGoals() {
-    players.sort(function(a, b) {
+    players = players.sort(function(a, b) {
       return b.goals - a.goals;
     })
   }
 
   function sortApps() {
-    console.log(players.sort(function(a, b) {
+    players.sort(function(a, b) {
       return b.appstotal - a.appstotal;
-    }))
+    })
   }
 
   return (
@@ -65,12 +65,14 @@ const Players = ({ players }) => {
             <label>Sort by:</label>
             <select className="form-control">
               <option>Oldest to newest</option>
-              <option onClick={sortGoals}>Goals</option>
-              <option onClick={sortApps}>Appearances</option>
+              <option>Goals</option>
+              <option>Appearances</option>
             </select>
           </div>
         </form>
       </div>
+
+      
       <div className="cards">
         {players.map((player) => 
           <div className="card">
