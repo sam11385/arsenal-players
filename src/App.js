@@ -7,7 +7,12 @@ class App extends Component {
 
   render() {
     return (
-      <Players players={this.state.players} />
+      // Sort by apps
+      <Players players={this.state.players.sort(function(a, b) {
+        return (
+          b.appstotal - a.appstotal
+        );
+      })} />
     );
   }
 
@@ -16,7 +21,8 @@ class App extends Component {
   };
 
   componentDidMount() {
-    fetch('https://bridge.buddyweb.fr/api/arsenalplayers/arsenalplayers')
+    const endpoint = 'https://bridge.buddyweb.fr/api/arsenalplayers/arsenalplayers'
+    fetch(endpoint)
     .then(res => res.json())
     .then((data) => {
       this.setState({ players: data })
