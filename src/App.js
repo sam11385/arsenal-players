@@ -6,13 +6,24 @@ import Players from './components/Players';
 class App extends Component {
 
   render() {
+    function reSort() {
+      console.log('test')
+    }
     return (
-      // Sort by apps
-      <Players players={this.state.players.sort(function(a, b) {
-        return (
-          b.appstotal - a.appstotal
-        );
+      <div>
+      <button onClick={reSort}>test</button>
+      
+      
+      <Players players={this.state.players.sort(function(a, b) {  
+        return b.appstotal - a.appstotal  
       })} />
+
+      {/* // Sort by goals
+      // <Players players={this.state.players.sort(function(a, b) {  
+      //   return b.goals - a.goals
+      // })} /> */}
+
+      </div>
     );
   }
 
